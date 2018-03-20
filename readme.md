@@ -1,17 +1,17 @@
-# changecase-keys
+# changecase-objects
 ## Convert an object's keys to different cases
 
 ## Install
 
 ```
-$ npm install --save changecase-keys
+$ npm install --save changecase-objects
 ```
 
 
 ## Usage
 
 ```js
-var changeKeys = require('changecase-keys')
+var changeKeys = require('changecase-objects')
 
 changeKeys.snakeCase({ fooBar: 'baz' })
 // { foo_bar: 'baz' }

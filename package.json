@@ -1,7 +1,7 @@
 {
   "name": "changecase-objects",
   "main": "index.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Convert an object's keys to any case",
   "license": "MIT",
   "repository": "joelsaupe/changecase-objects",
