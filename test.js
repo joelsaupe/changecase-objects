@@ -336,3 +336,30 @@ test('__custom_case__', function (t) {
   t.deepEqual(keyChange.customCase([unformattedObj], customConverter), [expected])
   t.end()
 })
+
+test('options.exclude', function (t) {
+  var unformatted = {
+    test_key: 'val',
+    'filters[test_key]': {
+      'nested_key': 'val'
+    },
+    'filters[array_of_values]': [{
+      'nested_key_name': 'val'
+    }]
+  }
+  var expected = {
+    testKey: 'val',
+    'filters[test_key]': {
+      nestedKey: 'val'
+    },
+    'filters[array_of_values]': [{
+      nestedKeyName: 'val'
+    }]
+  }
+
+  var exclude = ['filters[test_key]', 'filters[array_of_values]']
+
+  t.deepEqual(keyChange.camelCase(unformatted, { exclude: exclude }), expected)
+  t.deepEqual(keyChange.camelCase([unformatted], { exclude: exclude }), [expected])
+  t.end()
+})
